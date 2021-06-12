@@ -6,7 +6,7 @@
 package locadorabike.controller;
 
 import locadorabike.model.Franquia;
-import locadorabike.model.usuario;
+import locadorabike.model.Usuario;
 import locadorabike.model.Bicicleta;
 import locadorabike.model.Acessorio;
 
@@ -46,5 +46,63 @@ public class casdastroDAO extends ConnectionDAO{
         
         return sucesso;
     }
+    
+    public boolean inserirBicibleta(Bicicleta bike) {
+        connectToDB();
+        String sql = "INSERT INTO Bicicleta (cor, modelo, aro, alocada) values(?,?,?,?)";
+        try {
+            pst = con.prepareStatement(sql);
+            pst.setString(1, bike.cor);
+            pst.setString(2, bike.modelo);
+            pst.setInt(3, bike.aro);
+            pst.setBoolean(4, bike.locada);
+            
+            pst.execute();
+            sucesso = true;
+        } catch(SQLException exc) {
+            System.out.println("Erro: " + exc.getMessage());
+            sucesso = false;
+        } finally {
+            try {
+                con.close();
+                pst.close();
+            } catch(SQLException exc) {
+                System.out.println("Erro: " + exc.getMessage());
+            }
+        }
+        
+        return sucesso;
+    }
+    
+    public boolean inserirUsuario(Usuario user) {
+        connectToDB();
+        String sql = "INSERT INTO Usuario (cpf, telefone, nome, endereco, senha) values(?,?,?,?,?)";
+        try {
+            pst = con.prepareStatement(sql);
+            pst.setString(1, bike.cor);
+            pst.setString(2, bike.modelo);
+            pst.setInt(3, bike.aro);
+            pst.setBoolean(4, bike.locada);
+            
+            pst.execute();
+            sucesso = true;
+        } catch(SQLException exc) {
+            System.out.println("Erro: " + exc.getMessage());
+            sucesso = false;
+        } finally {
+            try {
+                con.close();
+                pst.close();
+            } catch(SQLException exc) {
+                System.out.println("Erro: " + exc.getMessage());
+            }
+        }
+        
+        return sucesso;
+    }
+    
+    
+    
+    
     
 }

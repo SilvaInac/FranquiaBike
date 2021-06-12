@@ -11,8 +11,8 @@ package locadorabike.model;
  */
 public class Acessorio {
     
-       int id_acessorio;
-       String cor_cap;
-       int tam_cap;
+       public int id_acessorio;
+       public String cor_cap;
+       public int tam_cap;
     
 }

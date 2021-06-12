@@ -11,12 +11,8 @@ package locadorabike.model;
  */
 public class Estoque {
     
-    String cnpjFranquia;
-    int id_bike;
-    int id_acessorio;
-    
-    void estoqueFranquia(){
-        
-    }
+    public String cnpjFranquia;
+    public int id_bike;
+    public int id_acessorio;
     
 }

@@ -11,12 +11,12 @@ package locadorabike.model;
  */
 public class Locar {
     
-    int id_usuario;
-    String user;
-    String senha;
-    String data_retirada;
-    String data_devolucao;
-    int id_bike;
-    int id_acessorio;
+    public int id_usuario;
+    public String user;
+    public String senha;
+    public String data_retirada;
+    public String data_devolucao;
+    public int id_bike;
+    public int id_acessorio;
         
 }

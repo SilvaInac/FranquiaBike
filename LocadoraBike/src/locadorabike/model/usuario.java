@@ -9,16 +9,12 @@ package locadorabike.model;
  *
  * @author Cap
  */
-public class usuario {
+public class Usuario {
     
-    int cpf;//apenas numeros
-    String nome;
-    int telefone;
-    String enderoco;
-    String senha;
-    
-    void cadastrar(){
+    public int cpf;//apenas numeros
+    public String nome;
+    public int telefone;
+    public String enderoco;
+    public String senha;
         
-    }
-    
 }

@@ -11,14 +11,9 @@ package locadorabike.model;
  */
 public class Bicicleta {
     
-    int id_bike;
-    String cor;
-    String modelo;
-    int aro;// 26/29
-    boolean locada;
-    
-    void adicionarBicicleta(){
-        
-    }
-    
+    public int id_bike;
+    public String cor;
+    public String modelo;
+    public int aro;// 26/29
+    public boolean locada;    
 }
