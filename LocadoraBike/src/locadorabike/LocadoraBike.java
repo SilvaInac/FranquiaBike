@@ -30,6 +30,8 @@ public class LocadoraBike {
         fran1.endereco = "Rua alfredo";
         fran1.telefone = 994561257;
         
+        Bicicleta bike = new Bicicleta();
+        
         casdastroDAO cDAO = new casdastroDAO();
         if(cDAO.inserirFranquia(fran1)){
             System.out.println("Franquia inserida");
