@@ -14,5 +14,6 @@ public class Acessorio {
        public int id_acessorio;
        public String cor_cap;
        public int tam_cap;
+       public boolean protecao;
     
 }

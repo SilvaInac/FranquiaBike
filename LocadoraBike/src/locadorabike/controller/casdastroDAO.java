@@ -79,10 +79,37 @@ public class casdastroDAO extends ConnectionDAO{
         String sql = "INSERT INTO Usuario (cpf, telefone, nome, endereco, senha) values(?,?,?,?,?)";
         try {
             pst = con.prepareStatement(sql);
-            pst.setString(1, bike.cor);
-            pst.setString(2, bike.modelo);
-            pst.setInt(3, bike.aro);
-            pst.setBoolean(4, bike.locada);
+            pst.setInt(1, user.cpf);
+            pst.setInt(2, user.telefone);
+            pst.setString(3, user.nome);
+            pst.setString(4, user.enderoco);
+            pst.setString(5, user.senha);
+            
+            pst.execute();
+            sucesso = true;
+        } catch(SQLException exc) {
+            System.out.println("Erro: " + exc.getMessage());
+            sucesso = false;
+        } finally {
+            try {
+                con.close();
+                pst.close();
+            } catch(SQLException exc) {
+                System.out.println("Erro: " + exc.getMessage());
+            }
+        }
+        
+        return sucesso;
+    }
+    
+    public boolean inserirAcessorio(Acessorio itens) {
+        connectToDB();
+        String sql = "INSERT INTO Usuario (protecao, corCapacete, tamanhoCapacete) values(?,?,?)";
+        try {
+            pst = con.prepareStatement(sql);
+            pst.setBoolean(1, itens.protecao);
+            pst.setInt(2, itens.tam_cap);
+            pst.setString(3, itens.cor_cap);
             
             pst.execute();
             sucesso = true;
