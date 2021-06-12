@@ -12,6 +12,9 @@ package locadorabike;
 
 import locadorabike.controller.casdastroDAO;
 import locadorabike.model.Franquia;
+import locadorabike.model.usuario;
+import locadorabike.model.Bicicleta;
+import locadorabike.model.Acessorio;
 
 public class LocadoraBike {
 
