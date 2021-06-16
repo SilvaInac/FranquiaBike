@@ -11,10 +11,10 @@ package locadorabike.model;
  */
 public class Usuario {
     
-    public int cpf;//apenas numeros
+    public long cpf;//apenas numeros
     public String nome;
-    public int telefone;
-    public String enderoco;
+    public long telefone;
+    public String endereco;
     public String senha;
         
 }

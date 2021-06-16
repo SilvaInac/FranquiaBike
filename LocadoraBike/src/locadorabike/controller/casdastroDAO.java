@@ -79,10 +79,10 @@ public class casdastroDAO extends ConnectionDAO{
         String sql = "INSERT INTO Usuario (cpf, telefone, nome, endereco, senha) values(?,?,?,?,?)";
         try {
             pst = con.prepareStatement(sql);
-            pst.setInt(1, user.cpf);
-            pst.setInt(2, user.telefone);
+            pst.setLong(1, user.cpf);
+            pst.setLong(2, user.telefone);
             pst.setString(3, user.nome);
-            pst.setString(4, user.enderoco);
+            pst.setString(4, user.endereco);
             pst.setString(5, user.senha);
             
             pst.execute();
