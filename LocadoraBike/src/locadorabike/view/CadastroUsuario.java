@@ -6,6 +6,7 @@
 package locadorabike.view;
 
 import javax.swing.JOptionPane;
+import locadorabike.controller.casdastroDAO;
 import locadorabike.model.Usuario;
 /**
  *
@@ -200,6 +201,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
         
+        casdastroDAO cDAO = new casdastroDAO();
         //Nome deve conter no minimo 6 caracteres
         if(campoNome.getText().length() < 6){
             JOptionPane.showMessageDialog(this, "O nome deve ter no minimo 6 caracteres\n Atualmente esta com: " + campoNome.getText().length() + " Caracteres", "Nome Inválido", 2);
@@ -239,6 +241,12 @@ public class CadastroUsuario extends javax.swing.JFrame {
             user.endereco = campoEndereco.getText();
             user.telefone = Integer.parseInt(campoTelefone.getText());
             user.senha = new String(campoSenha.getPassword());
+            
+            if (cDAO.inserirUsuario(user)) {
+                System.out.println("cadastrado com sucesso");
+            }
+            else
+                System.out.println("falha");
             
         }
         
