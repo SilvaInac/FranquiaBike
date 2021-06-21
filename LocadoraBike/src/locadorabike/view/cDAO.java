@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package locadorabike.model;
+package locadorabike.view;
 
 /**
  *
  * @author Cap
  */
-public class Franquia{
-    
-    public int cnpj;
-    public String nome;
-    public int telefone;// dd+numero
-    public String endereco;
+class cDAO {
     
 }
