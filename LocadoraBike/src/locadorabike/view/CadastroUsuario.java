@@ -234,7 +234,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
             } 
         }
         //CPF não pode conter pontos ou traçõs e dever conter 11 caracteres
-        else if(campoCPF.getText().contains(".") || campoCPF.getText().contains("-")){
+        else if(!campoCPF.getText().matches("[0-9]*")){
             try {
                 throw new PreenchimentoInvalidoException(1);
             } catch (PreenchimentoInvalidoException ex) {
@@ -245,12 +245,19 @@ public class CadastroUsuario extends javax.swing.JFrame {
             try {
                 throw new PreenchimentoInvalidoException(campoCPF.getText().length(), 2);
             } catch (PreenchimentoInvalidoException ex) {
-                JOptionPane.showMessageDialog(null, ex, "Nome Inválido", 2);
+                JOptionPane.showMessageDialog(null, ex, "CPF Inválido", 2);
             } 
         }
+        //verificar se o endereco contem 6 caracteres
+        else if(campoEndereco.getText().length() < 6){
+            try {
+                throw new PreenchimentoInvalidoException(campoEndereco.getText().length(), 4);
+            } catch (PreenchimentoInvalidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Endereço Inválido", 2);
+            } 
+        }        
         //telefone não pode conter parenteses ou traços e 11 digitos
-        else if(campoTelefone.getText().contains("(") || campoTelefone.getText().contains(")")
-                || campoTelefone.getText().contains("-")){
+        else if(!campoTelefone.getText().matches("[0-9]*")){
             try {
                 throw new PreenchimentoInvalidoException(2);
             } catch (PreenchimentoInvalidoException ex) {
@@ -261,15 +268,15 @@ public class CadastroUsuario extends javax.swing.JFrame {
             try {
                 throw new PreenchimentoInvalidoException(campoTelefone.getText().length(), 3);
             } catch (PreenchimentoInvalidoException ex) {
-                JOptionPane.showMessageDialog(null, ex, "Nome Inválido", 2);
+                JOptionPane.showMessageDialog(null, ex, "Telefone Inválido", 2);
             } 
-        }
+        }        
         //Senha deve conter 6 caracteres ou mais
         else if(campoSenha.getPassword().length < 6){
             try {
-                throw new PreenchimentoInvalidoException(campoCPF.getText().length(), 4);
+                throw new PreenchimentoInvalidoException(campoSenha.getPassword().length, 5);
             } catch (PreenchimentoInvalidoException ex) {
-                JOptionPane.showMessageDialog(null, ex, "Nome Inválido", 2);
+                JOptionPane.showMessageDialog(null, ex, "Senha Inválido", 2);
             }
         }
         //verifica se o usuario colocou a senha correta
