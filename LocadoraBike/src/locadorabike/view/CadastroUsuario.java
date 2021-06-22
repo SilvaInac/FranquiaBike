@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import locadorabike.model.Usuario;
 import locadorabike.controller.casdastroDAO;
 import locadorabike.exception.NaoPreenchidoException;
+import locadorabike.exception.PreenchimentoInvalidoException;
 /**
  *
  * @author Cap
@@ -226,31 +227,50 @@ public class CadastroUsuario extends javax.swing.JFrame {
         }
         //Nome deve conter no minimo 6 caracteres
         else if(campoNome.getText().length() < 6){
-            JOptionPane.showMessageDialog(this, "O nome deve ter no minimo 6 caracteres\n Atualmente esta com: " + campoNome.getText().length() + " Caracteres", "Nome Inválido", 2);
+            try {
+                throw new PreenchimentoInvalidoException(campoNome.getText().length(), 1);
+            } catch (PreenchimentoInvalidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Nome Inválido", 2);
+            } 
         }
         //CPF não pode conter pontos ou traçõs e dever conter 11 caracteres
-        else if(campoCPF.getText().contains(".")){
-            JOptionPane.showMessageDialog(this, "O CPF não deve conter ponto(.)", "CPF Inválido", 2);
-        }
-        else if(campoCPF.getText().contains("-")){
-            JOptionPane.showMessageDialog(this, "O CPF não deve conter traço(-)", "CPF Inválido", 2);
+        else if(campoCPF.getText().contains(".") || campoCPF.getText().contains("-")){
+            try {
+                throw new PreenchimentoInvalidoException(1);
+            } catch (PreenchimentoInvalidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "CPF Inválido", 2);
+            } 
         }
         else if(campoCPF.getText().length() != 11){
-            JOptionPane.showMessageDialog(this, "O CPF deve conter 11 caracteres\n Atualmente esta com: " + campoCPF.getText().length() + " Caracteres", "CPF Inválido", 2);
+            try {
+                throw new PreenchimentoInvalidoException(campoCPF.getText().length(), 2);
+            } catch (PreenchimentoInvalidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Nome Inválido", 2);
+            } 
         }
         //telefone não pode conter parenteses ou traços e 11 digitos
-        else if(campoTelefone.getText().contains("(") || campoTelefone.getText().contains(")")){
-            JOptionPane.showMessageDialog(this, "O Telefone não deve conter parenteses'( )'", "Telefone Inválido", 2);
-        }
-        else if(campoTelefone.getText().contains("-")){
-            JOptionPane.showMessageDialog(this, "O Telefone não deve conter traço(-)", "CPF Inválido", 2);
+        else if(campoTelefone.getText().contains("(") || campoTelefone.getText().contains(")")
+                || campoTelefone.getText().contains("-")){
+            try {
+                throw new PreenchimentoInvalidoException(2);
+            } catch (PreenchimentoInvalidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Telefone Inválido", 3);
+            }
         }
         else if(campoTelefone.getText().length() != 11){
-            JOptionPane.showMessageDialog(this, "O Telefone deve conter 11 digitos\n Atualmente esta com: " + campoTelefone.getText().length() + " Digitos", "Telefone Inválido", 2);
+            try {
+                throw new PreenchimentoInvalidoException(campoTelefone.getText().length(), 3);
+            } catch (PreenchimentoInvalidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Nome Inválido", 2);
+            } 
         }
         //Senha deve conter 6 caracteres ou mais
         else if(campoSenha.getPassword().length < 6){
-            JOptionPane.showMessageDialog(this, "A senha deve no minimo 8 caracteres\n Atualmente esta com: " + campoSenha.getPassword().length + " Caracteres", "Senha Inválido", 2);
+            try {
+                throw new PreenchimentoInvalidoException(campoCPF.getText().length(), 4);
+            } catch (PreenchimentoInvalidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Nome Inválido", 2);
+            }
         }
         //verifica se o usuario colocou a senha correta
         else if(!new String(campoSenha.getPassword()).equals(new String(campoConfirmarSenha.getPassword()))){
