@@ -8,6 +8,7 @@ package locadorabike.view;
 import javax.swing.JOptionPane;
 import locadorabike.model.Usuario;
 import locadorabike.controller.casdastroDAO;
+import locadorabike.exception.NaoPreenchidoException;
 /**
  *
  * @author Cap
@@ -213,8 +214,18 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
         
+        //Verifica se todos os campos foram preenchidos
+        if(campoNome.getText().isEmpty() || campoCPF.getText().isEmpty()
+                 || campoTelefone.getText().isEmpty() || campoSenha.getText().isEmpty()
+                 || campoConfirmarSenha.getText().isEmpty()){
+            try {
+                throw new NaoPreenchidoException();
+            } catch (NaoPreenchidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Campo Vazios", 2);
+            }         
+        }
         //Nome deve conter no minimo 6 caracteres
-        if(campoNome.getText().length() < 6){
+        else if(campoNome.getText().length() < 6){
             JOptionPane.showMessageDialog(this, "O nome deve ter no minimo 6 caracteres\n Atualmente esta com: " + campoNome.getText().length() + " Caracteres", "Nome Inválido", 2);
         }
         //CPF não pode conter pontos ou traçõs e dever conter 11 caracteres

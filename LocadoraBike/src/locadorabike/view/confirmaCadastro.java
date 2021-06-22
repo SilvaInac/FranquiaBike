@@ -7,6 +7,7 @@ package locadorabike.view;
 
 import javax.swing.JOptionPane;
 import locadorabike.controller.casdastroDAO;
+import locadorabike.exception.NaoPreenchidoException;
 import locadorabike.model.Usuario;
 
 /**
@@ -213,7 +214,14 @@ public class confirmaCadastro extends javax.swing.JFrame {
     private void confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarActionPerformed
         // TODO add your handling code here:
         //verifica se o usuario colocou a senha correta
-        if(!confuser.getSenha().equals(new String(SENHA1.getPassword()))){
+        if(new String(SENHA1.getPassword()).isEmpty()){
+            try {
+                throw new NaoPreenchidoException();
+            } catch (NaoPreenchidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Campo Vazios", 2);
+            }         
+        }
+        else if(!confuser.getSenha().equals(new String(SENHA1.getPassword()))){
             JOptionPane.showMessageDialog(this, "As senhas deve ser igual a senha inserida na tela anterior", "Senha Inválida", 2);
         }
         else{
