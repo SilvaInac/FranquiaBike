@@ -5,12 +5,19 @@
  */
 package locadorabike.view;
 
+import javax.swing.JOptionPane;
+import locadorabike.controller.buscaDAO;
+import locadorabike.exception.NaoPreenchidoException;
+import locadorabike.exception.PreenchimentoInvalidoException;
+import locadorabike.model.Usuario;
+
 /**
  *
  * @author Cap
  */
 public class LoginUsuario extends javax.swing.JFrame {
-
+    buscaDAO bDAO = new buscaDAO();
+    Usuario user = new Usuario();
     /**
      * Creates new form LoginUsuario
      */
@@ -39,6 +46,9 @@ public class LoginUsuario extends javax.swing.JFrame {
         sair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sing UP");
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
@@ -142,11 +152,44 @@ public class LoginUsuario extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(400, 500));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
         // TODO add your handling code here:
+        if(cpf1.getText().isEmpty() || senha1.getText().isEmpty()){
+            try {
+                throw new NaoPreenchidoException();
+            } catch (NaoPreenchidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "Campo Vazios", 2);
+            }         
+        }
+        //CPF não pode conter pontos ou traçõs e dever conter 11 caracteres
+        else if(!cpf1.getText().matches("[0-9]*")){
+            try {
+                throw new PreenchimentoInvalidoException(1);
+            } catch (PreenchimentoInvalidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "CPF Inválido", 2);
+            } 
+        }
+        else if(cpf1.getText().length() != 11){
+            try {
+                throw new PreenchimentoInvalidoException(cpf1.getText().length(), 2);
+            } catch (PreenchimentoInvalidoException ex) {
+                JOptionPane.showMessageDialog(null, ex, "CPF Inválido", 2);
+            } 
+        }
+        else{
+            user = bDAO.buscarUsuarioPorCPF(Long.parseLong(cpf1.getText()));
+            if(!user.getSenha().equals(new String(senha1.getPassword()))){
+            JOptionPane.showMessageDialog(this, "Senha errada tente novamente!", "Senha Inválida", 2);
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Bem Vindo a LocanBike!", "Bem Vindo", 1);
+            }
+        }
+        
     }//GEN-LAST:event_entrarActionPerformed
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed

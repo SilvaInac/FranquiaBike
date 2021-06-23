@@ -16,7 +16,7 @@ public class buscaDAO extends ConnectionDAO{
     boolean sucesso = false;
     
     //bucando o usuario pelo CPF
-    public Usuario buscarPessoaPorCPF(long cpf) {
+    public Usuario buscarUsuarioPorCPF(long cpf) {
         
         connectToDB();
         Usuario userAux = null;

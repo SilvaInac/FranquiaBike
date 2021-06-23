@@ -309,7 +309,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
     private void VOLTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VOLTARActionPerformed
         // TODO add your handling code here:
-        telaLogin login = new telaLogin();
+        LoginUsuario login = new LoginUsuario();
         
         login.setVisible(true);
         this.dispose();

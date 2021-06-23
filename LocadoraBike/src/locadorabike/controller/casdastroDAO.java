@@ -11,7 +11,6 @@ import locadorabike.model.Bicicleta;
 import locadorabike.model.Acessorio;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 /**
  *

@@ -230,7 +230,7 @@ public class confirmaCadastro extends javax.swing.JFrame {
             }else{
                 System.out.println("Não conseguimos cadastrar");
             }
-            telaLogin login = new telaLogin();
+            LoginUsuario login = new LoginUsuario();
         
             login.setVisible(true);
             this.dispose();
