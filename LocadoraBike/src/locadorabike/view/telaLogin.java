@@ -150,6 +150,7 @@ public class telaLogin extends javax.swing.JFrame {
         
         telaCadUser.setVisible(true);
         this.dispose();
+        
     }                                         
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {                                     
