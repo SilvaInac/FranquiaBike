@@ -34,7 +34,6 @@ public class LoginUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         TITULO = new javax.swing.JLabel();
         cpf = new javax.swing.JLabel();
         cpf1 = new javax.swing.JTextField();
@@ -44,23 +43,28 @@ public class LoginUsuario extends javax.swing.JFrame {
         cadastrar = new javax.swing.JButton();
         informacoes = new javax.swing.JButton();
         sair = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sing UP");
         setUndecorated(true);
         setResizable(false);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TITULO.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         TITULO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TITULO.setText("BEM VINDO A LOCANBIKE");
+        getContentPane().add(TITULO, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
         cpf.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         cpf.setText("CPF:");
+        getContentPane().add(cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 30));
+        getContentPane().add(cpf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 290, 30));
 
         senha.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         senha.setText("SENHA:");
+        getContentPane().add(senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, 30));
+        getContentPane().add(senha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 290, 30));
 
         entrar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         entrar.setText("ENTRAR");
@@ -69,6 +73,7 @@ public class LoginUsuario extends javax.swing.JFrame {
                 entrarActionPerformed(evt);
             }
         });
+        getContentPane().add(entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 170, 40));
 
         cadastrar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         cadastrar.setText("REGISTRAR-SE");
@@ -77,9 +82,11 @@ public class LoginUsuario extends javax.swing.JFrame {
                 cadastrarActionPerformed(evt);
             }
         });
+        getContentPane().add(cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 290, 190, 40));
 
         informacoes.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         informacoes.setText("CONHEÇA MAIS SOBRE NÓS");
+        getContentPane().add(informacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 360, 50));
 
         sair.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         sair.setText("SAIR");
@@ -88,69 +95,10 @@ public class LoginUsuario extends javax.swing.JFrame {
                 sairActionPerformed(evt);
             }
         });
+        getContentPane().add(sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 439, 360, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TITULO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(senha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(senha1)
-                            .addComponent(cpf1)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(informacoes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(entrar, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(sair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(TITULO, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cpf1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(senha, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(senha1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(informacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addComponent(sair, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/logo_fundo.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 0, 400, 500));
 
         setSize(new java.awt.Dimension(400, 500));
         setLocationRelativeTo(null);
@@ -187,6 +135,10 @@ public class LoginUsuario extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(this, "Bem Vindo a LocanBike!", "Bem Vindo", 1);
+                menuprincipal menu = new menuprincipal();
+        
+                menu.setVisible(true);
+                this.dispose();
             }
         }
         
@@ -247,7 +199,7 @@ public class LoginUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField cpf1;
     private javax.swing.JButton entrar;
     private javax.swing.JButton informacoes;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton sair;
     private javax.swing.JLabel senha;
     private javax.swing.JPasswordField senha1;

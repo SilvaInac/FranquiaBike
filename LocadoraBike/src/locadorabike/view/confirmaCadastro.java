@@ -222,11 +222,12 @@ public class confirmaCadastro extends javax.swing.JFrame {
             }         
         }
         else if(!confuser.getSenha().equals(new String(SENHA1.getPassword()))){
-            JOptionPane.showMessageDialog(this, "As senhas deve ser igual a senha inserida na tela anterior", "Senha Inválida", 2);
+            JOptionPane.showMessageDialog(this, "A senha deve ser igual a senha inserida na tela anterior", "Senha Inválida", 2);
         }
         else{
             if(cDAO.inserirUsuario(confuser)){
                 System.out.println("Usuario cadastrado");
+                JOptionPane.showMessageDialog(this, "Prabéns!! \n Bem vindo a LocanBike! \n Cadastro Realizado com Sucesso!", "Usuario cadastrado", 1);
             }else{
                 System.out.println("Não conseguimos cadastrar");
             }
