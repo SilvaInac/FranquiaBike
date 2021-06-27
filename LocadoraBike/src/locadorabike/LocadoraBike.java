@@ -15,7 +15,7 @@ import locadorabike.model.Franquia;
 import locadorabike.model.Usuario;
 import locadorabike.model.Bicicleta;
 import locadorabike.model.Acessorio;
-import locadorabike.view.telaLogin;
+import locadorabike.view.LoginUsuario;
 
 public class LocadoraBike {
 
@@ -41,7 +41,7 @@ public class LocadoraBike {
             System.out.println("Não conseguimos inserir");
         }*/
         
-        telaLogin login = new telaLogin();
+        LoginUsuario login = new LoginUsuario();
         
         login.setVisible(true);
         
