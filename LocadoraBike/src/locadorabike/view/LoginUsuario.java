@@ -135,7 +135,7 @@ public class LoginUsuario extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(this, "Bem Vindo a LocanBike!", "Bem Vindo", 1);
-                menuprincipal menu = new menuprincipal();
+                menuprincipal menu = new menuprincipal(user);
         
                 menu.setVisible(true);
                 this.dispose();
