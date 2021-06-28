@@ -9,12 +9,6 @@ package locadorabike;
  *
  * @author Cap
  */
-
-import locadorabike.controller.casdastroDAO;
-import locadorabike.model.Franquia;
-import locadorabike.model.Usuario;
-import locadorabike.model.Bicicleta;
-import locadorabike.model.Acessorio;
 import locadorabike.view.LoginUsuario;
 
 public class LocadoraBike {

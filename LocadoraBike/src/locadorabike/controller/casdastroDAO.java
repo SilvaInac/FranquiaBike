@@ -75,7 +75,7 @@ public class casdastroDAO extends ConnectionDAO{
     
     public boolean inserirUsuario(Usuario user) {
         connectToDB();
-        String sql = "INSERT INTO Usuario (cpf, telefone, nome, endereco, senha) values(?,?,?,?,?)";
+        String sql = "INSERT INTO Usuario (cpf, telefone, nome, endereco, senha, adm) values(?,?,?,?,?,?)";
         try {
             pst = con.prepareStatement(sql);
             pst.setLong(1, user.getCpf());
@@ -83,6 +83,7 @@ public class casdastroDAO extends ConnectionDAO{
             pst.setString(3, user.getNome());
             pst.setString(4, user.getEndereco());
             pst.setString(5, user.getSenha());
+            pst.setBoolean(6, user.isAdm());
             
             pst.execute();
             sucesso = true;

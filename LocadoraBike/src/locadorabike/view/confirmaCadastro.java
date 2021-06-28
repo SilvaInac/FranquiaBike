@@ -38,6 +38,7 @@ public class confirmaCadastro extends javax.swing.JFrame {
         confuser.setTelefone(user.getTelefone());
         confuser.setCpf(user.getCpf());
         confuser.setSenha(user.getSenha());
+        confuser.setAdm(false);
     }
 
     /**

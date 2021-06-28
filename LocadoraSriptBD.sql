@@ -78,8 +78,6 @@ create table Locar(
     PRIMARY KEY(idCliente, idBike, idAcessorio)
 );
 
-CREATE USER 'User' identified by 'senha123';
-CREATE USER 'Adm' identified by 'Administrador';
-
+select * from Usuario;
 
 
