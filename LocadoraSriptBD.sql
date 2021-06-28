@@ -25,6 +25,7 @@ create table Usuario(
     nome varchar(30) not null,
     endereco varchar(50) not null,
     senha varchar(15) not null, 
+    adm bit not null,
     primary key(cpf)
 );
 
@@ -54,7 +55,7 @@ create table estoque(
 );
 
 create table Locar(
-	idCliente int not null,
+	idCliente bigint not null,
     idBike int not null,
     idAcessorio int not null,
     retirada varchar(30) not null,
@@ -80,6 +81,5 @@ create table Locar(
 CREATE USER 'User' identified by 'senha123';
 CREATE USER 'Adm' identified by 'Administrador';
 
-select* from Usuario;
 
 
