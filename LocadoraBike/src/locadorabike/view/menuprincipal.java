@@ -35,6 +35,7 @@ public class menuprincipal extends javax.swing.JFrame {
         nomeuser.setText("Bem Vindo, " + user.getNome());
         nomeuser1.setText("Bem Vindo, " + user.getNome());
         if(!user.isAdm()){
+            legenda.setVisible(false);
             criarfranq.setVisible(false);
             criarbikeasc.setVisible(false);
         }
@@ -60,6 +61,7 @@ public class menuprincipal extends javax.swing.JFrame {
         criarbikeasc = new javax.swing.JButton();
         locar = new javax.swing.JButton();
         franquias = new javax.swing.JButton();
+        legenda = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         icon = new javax.swing.JLabel();
@@ -117,13 +119,13 @@ public class menuprincipal extends javax.swing.JFrame {
         criarfranq.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         criarfranq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/franquia_30x30.png"))); // NOI18N
         criarfranq.setText("FRAQUIAS");
-        jPanel1.add(criarfranq, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 140, 100));
+        jPanel1.add(criarfranq, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 140, 100));
 
         criarbikeasc.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         criarbikeasc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/bike_30x30.png"))); // NOI18N
         criarbikeasc.setText("BIKE");
         criarbikeasc.setToolTipText("");
-        jPanel1.add(criarbikeasc, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 140, 100));
+        jPanel1.add(criarbikeasc, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 140, 100));
 
         locar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         locar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/locar_30x30.png"))); // NOI18N
@@ -134,6 +136,11 @@ public class menuprincipal extends javax.swing.JFrame {
         franquias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/franquia2_30x30.png"))); // NOI18N
         franquias.setText("FRAQUIAS");
         jPanel1.add(franquias, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 140, 100));
+
+        legenda.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        legenda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        legenda.setText("O QUE VOCÊ DESEJA CADASTRAR:");
+        jPanel1.add(legenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 320, 30));
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 470));
 
         jTabbedPane1.addTab("MAIN", jPanel1);
@@ -317,6 +324,7 @@ public class menuprincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel legenda;
     private javax.swing.JButton locar;
     private javax.swing.JLabel logout;
     private javax.swing.JLabel logout1;
