@@ -38,6 +38,7 @@ public class buscaDAO extends ConnectionDAO{
                     userAux.setCpf(rs.getLong("cpf"));
                     userAux.setTelefone(rs.getLong("telefone"));
                     userAux.setSenha(rs.getString("senha"));
+                    userAux.setAdm(rs.getBoolean("adm"));
                 }
             }
             sucesso = true;

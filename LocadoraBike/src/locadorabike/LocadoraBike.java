@@ -10,6 +10,7 @@ package locadorabike;
  * @author Cap
  */
 
+import javax.swing.JOptionPane;
 import locadorabike.controller.casdastroDAO;
 import locadorabike.model.Franquia;
 import locadorabike.model.Usuario;
@@ -41,9 +42,8 @@ public class LocadoraBike {
             System.out.println("Não conseguimos inserir");
         }*/
         
-        LoginUsuario login = new LoginUsuario();
-        
-        login.setVisible(true);
+        LoginUsuario login = new LoginUsuario();        
+            login.setVisible(true);        
         
     }
     

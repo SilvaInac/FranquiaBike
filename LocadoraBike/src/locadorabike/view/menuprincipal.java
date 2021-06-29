@@ -34,6 +34,10 @@ public class menuprincipal extends javax.swing.JFrame {
         senha1.setText(user.getSenha());
         nomeuser.setText("Bem Vindo, " + user.getNome());
         nomeuser1.setText("Bem Vindo, " + user.getNome());
+        if(!user.isAdm()){
+            criarfranq.setVisible(false);
+            criarbikeasc.setVisible(false);
+        }
         
     }
 
@@ -51,6 +55,11 @@ public class menuprincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         icon1 = new javax.swing.JLabel();
         nomeuser1 = new javax.swing.JLabel();
+        logout = new javax.swing.JLabel();
+        criarfranq = new javax.swing.JButton();
+        criarbikeasc = new javax.swing.JButton();
+        locar = new javax.swing.JButton();
+        franquias = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         icon = new javax.swing.JLabel();
@@ -67,6 +76,7 @@ public class menuprincipal extends javax.swing.JFrame {
         atualiza = new javax.swing.JButton();
         senha1 = new javax.swing.JPasswordField();
         cpf1 = new javax.swing.JLabel();
+        logout1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDesktopPane4Layout = new javax.swing.GroupLayout(jDesktopPane4);
@@ -94,6 +104,36 @@ public class menuprincipal extends javax.swing.JFrame {
 
         nomeuser1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jPanel1.add(nomeuser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 260, 30));
+
+        logout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/logout_30x30.png"))); // NOI18N
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
+            }
+        });
+        jPanel1.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        criarfranq.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        criarfranq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/franquia_30x30.png"))); // NOI18N
+        criarfranq.setText("FRAQUIAS");
+        jPanel1.add(criarfranq, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 140, 100));
+
+        criarbikeasc.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        criarbikeasc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/bike_30x30.png"))); // NOI18N
+        criarbikeasc.setText("BIKE");
+        criarbikeasc.setToolTipText("");
+        jPanel1.add(criarbikeasc, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 140, 100));
+
+        locar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        locar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/locar_30x30.png"))); // NOI18N
+        locar.setText("LOCAR");
+        jPanel1.add(locar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 140, 100));
+
+        franquias.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        franquias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/franquia2_30x30.png"))); // NOI18N
+        franquias.setText("FRAQUIAS");
+        jPanel1.add(franquias, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 140, 100));
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 470));
 
         jTabbedPane1.addTab("MAIN", jPanel1);
@@ -120,40 +160,51 @@ public class menuprincipal extends javax.swing.JFrame {
         endereco.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         endereco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         endereco.setText("ENDEREÇO:");
-        jPanel2.add(endereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 40));
+        jPanel2.add(endereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 40));
 
         telefone.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         telefone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         telefone.setText("SENHA:");
-        jPanel2.add(telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 110, 40));
+        jPanel2.add(telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 110, 40));
         jPanel2.add(nome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 230, 40));
 
         senha.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         senha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         senha.setText("TELEFONE:");
-        jPanel2.add(senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 110, 40));
-        jPanel2.add(telefone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 230, 40));
-        jPanel2.add(endereco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 230, 40));
+        jPanel2.add(senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 110, 40));
+        jPanel2.add(telefone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 230, 40));
+        jPanel2.add(endereco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 230, 40));
 
+        excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/deletar_30x30.png"))); // NOI18N
         excluir.setText("DELETAR CONTA");
         excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 excluirActionPerformed(evt);
             }
         });
-        jPanel2.add(excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 150, 40));
+        jPanel2.add(excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 340, 40));
 
+        atualiza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/AUTALIZAR_30x30.png"))); // NOI18N
         atualiza.setText("ATUALIZAR DADOS");
         atualiza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 atualizaActionPerformed(evt);
             }
         });
-        jPanel2.add(atualiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 160, 40));
-        jPanel2.add(senha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 230, 40));
+        jPanel2.add(atualiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 340, 40));
+        jPanel2.add(senha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 230, 40));
 
         cpf1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.add(cpf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 230, 40));
+
+        logout1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/logout_30x30.png"))); // NOI18N
+        logout1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logout1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(logout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 470));
 
         jTabbedPane1.addTab("PERFIL", jPanel2);
@@ -203,6 +254,16 @@ public class menuprincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_atualizaActionPerformed
 
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_logoutMouseClicked
+
+    private void logout1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout1MouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_logout1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -242,9 +303,12 @@ public class menuprincipal extends javax.swing.JFrame {
     private javax.swing.JButton atualiza;
     private javax.swing.JLabel cpf;
     private javax.swing.JLabel cpf1;
+    private javax.swing.JButton criarbikeasc;
+    private javax.swing.JButton criarfranq;
     private javax.swing.JLabel endereco;
     private javax.swing.JTextField endereco1;
     private javax.swing.JButton excluir;
+    private javax.swing.JButton franquias;
     private javax.swing.JLabel icon;
     private javax.swing.JLabel icon1;
     private javax.swing.JDesktopPane jDesktopPane4;
@@ -253,6 +317,9 @@ public class menuprincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton locar;
+    private javax.swing.JLabel logout;
+    private javax.swing.JLabel logout1;
     private javax.swing.JLabel nome;
     private javax.swing.JTextField nome1;
     private javax.swing.JLabel nomeuser;
