@@ -99,6 +99,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="nomeuser1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="14" style="1"/>
+                </Property>
                 <Property name="horizontalAlignment" type="int" value="11"/>
               </Properties>
               <Constraints>
@@ -109,10 +112,14 @@
             </Component>
             <Component class="javax.swing.JLabel" name="logout">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="14" style="1"/>
+                </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/locadorabike/view/imagens/logout_30x30.png"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="LOGOUT"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logoutMouseClicked"/>
@@ -245,6 +252,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="nomeuser">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="14" style="1"/>
+                </Property>
                 <Property name="horizontalAlignment" type="int" value="11"/>
               </Properties>
               <Constraints>
@@ -397,10 +407,14 @@
             </Component>
             <Component class="javax.swing.JLabel" name="logout1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="14" style="1"/>
+                </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/locadorabike/view/imagens/logout_30x30.png"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="LOGOUT"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logout1MouseClicked"/>

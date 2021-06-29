@@ -104,11 +104,14 @@ public class menuprincipal extends javax.swing.JFrame {
         icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/user_30x30.png"))); // NOI18N
         jPanel1.add(icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
 
+        nomeuser1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         nomeuser1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jPanel1.add(nomeuser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 260, 30));
 
+        logout.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         logout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/logout_30x30.png"))); // NOI18N
+        logout.setText("LOGOUT");
         logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logoutMouseClicked(evt);
@@ -151,6 +154,7 @@ public class menuprincipal extends javax.swing.JFrame {
         icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/user_30x30.png"))); // NOI18N
         jPanel2.add(icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
 
+        nomeuser.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         nomeuser.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jPanel2.add(nomeuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 260, 30));
 
@@ -204,8 +208,10 @@ public class menuprincipal extends javax.swing.JFrame {
         cpf1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.add(cpf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 230, 40));
 
+        logout1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         logout1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/logout_30x30.png"))); // NOI18N
+        logout1.setText("LOGOUT");
         logout1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logout1MouseClicked(evt);
@@ -263,11 +269,15 @@ public class menuprincipal extends javax.swing.JFrame {
 
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
         // TODO add your handling code here:
+        LoginUsuario login = new LoginUsuario();
+        login.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_logoutMouseClicked
 
     private void logout1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout1MouseClicked
         // TODO add your handling code here:
+        LoginUsuario login = new LoginUsuario();
+        login.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_logout1MouseClicked
 
