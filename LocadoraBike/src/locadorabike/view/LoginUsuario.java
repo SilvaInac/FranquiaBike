@@ -56,17 +56,21 @@ public class LoginUsuario extends javax.swing.JFrame {
         TITULO.setText("BEM VINDO A LOCANBIKE");
         getContentPane().add(TITULO, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
+        cpf.setBackground(new java.awt.Color(255, 255, 255));
         cpf.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        cpf.setForeground(new java.awt.Color(255, 255, 255));
         cpf.setText("CPF:");
         getContentPane().add(cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 30));
         getContentPane().add(cpf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 290, 30));
 
         senha.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        senha.setForeground(new java.awt.Color(255, 255, 255));
         senha.setText("SENHA:");
         getContentPane().add(senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, 30));
         getContentPane().add(senha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 290, 30));
 
-        entrar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        entrar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/entrar_30x30.png"))); // NOI18N
         entrar.setText("ENTRAR");
         entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +79,8 @@ public class LoginUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 170, 40));
 
-        cadastrar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        cadastrar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/regitrar_30x30.png"))); // NOI18N
         cadastrar.setText("REGISTRAR-SE");
         cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,8 +135,11 @@ public class LoginUsuario extends javax.swing.JFrame {
         }
         else{
             user = bDAO.buscarUsuarioPorCPF(Long.parseLong(cpf1.getText()));
-            if(!user.getSenha().equals(new String(senha1.getPassword()))){
-            JOptionPane.showMessageDialog(this, "Senha errada tente novamente!", "Senha Inválida", 2);
+            if(user == null ){                
+                JOptionPane.showMessageDialog(this, "CPF inválido!\n !Verifique se digitou corretamente!\n Caso não tenha cadastro, Registri-se!", "Usuario não Existe!", 2);
+            }
+            else if(!user.getSenha().equals(new String(senha1.getPassword()))){
+                JOptionPane.showMessageDialog(this, "Senha errada tente novamente!", "Senha Inválida", 2);
             }
             else{
                 JOptionPane.showMessageDialog(this, "Bem Vindo a LocanBike!", "Bem Vindo", 1);

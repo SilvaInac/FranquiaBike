@@ -35,9 +35,8 @@ public class LocadoraBike {
             System.out.println("Não conseguimos inserir");
         }*/
         
-        LoginUsuario login = new LoginUsuario();
-        
-        login.setVisible(true);
+        LoginUsuario login = new LoginUsuario();        
+            login.setVisible(true);        
         
     }
     
