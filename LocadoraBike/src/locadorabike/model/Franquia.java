@@ -11,9 +11,43 @@ package locadorabike.model;
  */
 public class Franquia{
     
-    public int cnpj;
-    public String nome;
-    public int telefone;// dd+numero
-    public String endereco;
+    private long cnpj;
+    private String nome;
+    private long telefone;// dd+numero
+    private String endereco;
+
+    public long getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(long cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public long getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(long telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+ 
     
 }
