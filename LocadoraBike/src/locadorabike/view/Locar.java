@@ -5,6 +5,8 @@
  */
 package locadorabike.view;
 
+import locadorabike.model.Usuario;
+
 /**
  *
  * @author Cap
@@ -15,6 +17,16 @@ public class Locar extends javax.swing.JFrame {
      * Creates new form Locar
      */
     public Locar() {
+        initComponents();
+    }
+    Usuario atualuser = new Usuario();
+    public Locar(Usuario user) {
+        atualuser.setCpf(user.getCpf());
+        atualuser.setTelefone(user.getTelefone());
+        atualuser.setAdm(user.isAdm());
+        atualuser.setEndereco(user.getEndereco());
+        atualuser.setNome(user.getNome());
+        atualuser.setSenha(user.getSenha());
         initComponents();
     }
 
@@ -43,18 +55,21 @@ public class Locar extends javax.swing.JFrame {
         modelo = new javax.swing.JLabel();
         aro = new javax.swing.JLabel();
         cor = new javax.swing.JLabel();
-        leg4 = new javax.swing.JLabel();
         leg5 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         acessorio = new javax.swing.JComboBox<>();
-        aro1 = new javax.swing.JLabel();
+        corcap = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        sim = new javax.swing.JRadioButton();
+        nao = new javax.swing.JRadioButton();
         jLabel8 = new javax.swing.JLabel();
-        aro2 = new javax.swing.JLabel();
+        tamanhocap = new javax.swing.JLabel();
+        logout1 = new javax.swing.JLabel();
+        leg6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        logout2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -63,215 +78,144 @@ public class Locar extends javax.swing.JFrame {
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         leg1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         leg1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         leg1.setText("SAIDA:");
+        jPanel2.add(leg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 80, 30));
 
-        escolha1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(escolha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 100, 30));
 
         leg2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         leg2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         leg2.setText("DESTINO");
+        jPanel2.add(leg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 80, 30));
 
-        escolha2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(escolha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 100, 30));
 
         leg3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         leg3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         leg3.setText("ESCOLHA A BIKE QUE VOCÊ DESEJA");
+        jPanel2.add(leg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 372, 30));
 
         bike.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(bike, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 100, 30));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("BIKE:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 70, 30));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("MODELO:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 100, 30));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("COR:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 60, 30));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("ARO:");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 80, 30));
 
         modelo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         modelo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 110, 30));
 
         aro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         aro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(aro, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 100, 30));
 
         cor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         cor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        leg4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        leg4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        leg4.setText("ESCOLHA A FRANQUIA DE:");
+        jPanel2.add(cor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 100, 30));
 
         leg5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         leg5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         leg5.setText("ESCOLHA O ACESSÓRIO QUE VOCÊ DESEJA");
+        jPanel2.add(leg5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 372, 30));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("ACESSÓRIO:");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 100, 30));
 
         acessorio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(acessorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 266, 30));
 
-        aro1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        aro1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        corcap.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        corcap.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(corcap, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 90, 30));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("COR CAP.:");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 100, 30));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("COM ACESSÓRIO:");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 140, 30));
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jRadioButton1.setText("SIM");
+        buttonGroup1.add(sim);
+        sim.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        sim.setText("SIM");
+        jPanel2.add(sim, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jRadioButton2.setText("NÃO");
+        buttonGroup1.add(nao);
+        nao.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        nao.setText("NÃO");
+        jPanel2.add(nao, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("TAMANHO:");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 80, 30));
 
-        aro2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        aro2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tamanhocap.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tamanhocap.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(tamanhocap, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 80, 30));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(leg4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(leg3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(leg5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(modelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(cor, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(aro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(bike, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(acessorio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(aro1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(aro2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButton1)
-                        .addGap(37, 37, 37)
-                        .addComponent(jRadioButton2)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(leg1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(escolha1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(leg2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addComponent(escolha2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(leg4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(leg1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(escolha1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(leg2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(escolha2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(leg3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bike, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(aro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(leg5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(acessorio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(aro1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(aro2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(102, Short.MAX_VALUE))
-        );
+        logout1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        logout1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/volta_30x30.png"))); // NOI18N
+        logout1.setText("VOLTAR");
+        logout1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logout1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(logout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        leg6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        leg6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        leg6.setText("ESCOLHA A FRANQUIA DE:");
+        jPanel2.add(leg6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 200, 30));
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/locar1_30x30.png"))); // NOI18N
+        jButton1.setText("LOCAR");
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 170, 40));
 
         jTabbedPane1.addTab("LOCAR", jPanel2);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
-        );
+        logout2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        logout2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logout2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/volta_30x30.png"))); // NOI18N
+        logout2.setText("VOLTAR");
+        logout2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logout2MouseClicked(evt);
+            }
+        });
+        jPanel3.add(logout2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jTabbedPane1.addTab("MINHAS LOCAÇÕES", jPanel3);
 
@@ -291,6 +235,20 @@ public class Locar extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(400, 500));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void logout1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout1MouseClicked
+        // TODO add your handling code here:
+        menuprincipal menu = new menuprincipal(atualuser);
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logout1MouseClicked
+
+    private void logout2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout2MouseClicked
+        // TODO add your handling code here:
+        menuprincipal menu = new menuprincipal(atualuser);
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logout2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -330,13 +288,13 @@ public class Locar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> acessorio;
     private javax.swing.JLabel aro;
-    private javax.swing.JLabel aro1;
-    private javax.swing.JLabel aro2;
     private javax.swing.JComboBox<String> bike;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel cor;
-    private javax.swing.JComboBox<String> escolha1;
-    private javax.swing.JComboBox<String> escolha2;
+    private javax.swing.JLabel corcap;
+    private javax.swing.JComboBox<Object> escolha1;
+    private javax.swing.JComboBox<Object> escolha2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -347,14 +305,17 @@ public class Locar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel leg1;
     private javax.swing.JLabel leg2;
     private javax.swing.JLabel leg3;
-    private javax.swing.JLabel leg4;
     private javax.swing.JLabel leg5;
+    private javax.swing.JLabel leg6;
+    private javax.swing.JLabel logout1;
+    private javax.swing.JLabel logout2;
     private javax.swing.JLabel modelo;
+    private javax.swing.JRadioButton nao;
+    private javax.swing.JRadioButton sim;
+    private javax.swing.JLabel tamanhocap;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,7 +26,13 @@ public class menuprincipal extends javax.swing.JFrame {
     }
     Usuario atuuser = new Usuario();
     public menuprincipal(Usuario user) {
-        initComponents();
+        initComponents();        
+        atuuser.setCpf(user.getCpf());
+        atuuser.setTelefone(user.getTelefone());
+        atuuser.setAdm(user.isAdm());
+        atuuser.setEndereco(user.getEndereco());
+        atuuser.setNome(user.getNome());
+        atuuser.setSenha(user.getSenha());
         nome1.setText(user.getNome());
         cpf1.setText(Long.toString(user.getCpf()));
         endereco1.setText(user.getEndereco());
@@ -288,7 +294,7 @@ public class menuprincipal extends javax.swing.JFrame {
 
     private void locarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locarActionPerformed
         // TODO add your handling code here:
-        Locar lc = new Locar();
+        Locar lc = new Locar(atuuser);
         lc.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_locarActionPerformed
