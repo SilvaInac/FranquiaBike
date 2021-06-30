@@ -133,6 +133,11 @@ public class menuprincipal extends javax.swing.JFrame {
         locar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         locar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/locar_30x30.png"))); // NOI18N
         locar.setText("LOCAR");
+        locar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locarActionPerformed(evt);
+            }
+        });
         jPanel1.add(locar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 140, 100));
 
         franquias.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -280,6 +285,13 @@ public class menuprincipal extends javax.swing.JFrame {
         login.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_logout1MouseClicked
+
+    private void locarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locarActionPerformed
+        // TODO add your handling code here:
+        Locar lc = new Locar();
+        lc.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_locarActionPerformed
 
     /**
      * @param args the command line arguments
