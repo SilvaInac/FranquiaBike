@@ -4,14 +4,14 @@ create database bike;
 use bike;
 
 create table Franquia(
-	cnpj int primary key not null,
+	cnpj bigint primary key not null,
 	nome varchar(50) not null,
-    telefone int not null,
+    telefone bigint not null,
     endereco varchar(100) not null
 );
 
 create table Bicicleta(
-	id int not null,
+	id int not null auto_increment,
     cor varchar(30) not null,
     modelo varchar(50) not null,
     aro int not null,
@@ -30,7 +30,7 @@ create table Usuario(
 );
 
 create table Acessorio(
-	id int not null,
+	id int not null auto_increment,
     protecao bool,
 	corCapacete varchar(30) not null,
     tamanhoCapacete int not null,
@@ -79,5 +79,5 @@ create table Locar(
 );
 
 select * from Usuario;
-
-
+select * from Franquia;
+select * from Bicicleta;

@@ -24,10 +24,10 @@ public class casdastroDAO extends ConnectionDAO{
         String sql = "INSERT INTO Franquia (cnpj, nome, telefone, endereco) values(?,?,?,?)";
         try {
             pst = con.prepareStatement(sql);
-            pst.setInt(1, fraq.cnpj);
-            pst.setString(2, fraq.nome);
-            pst.setInt(3, fraq.telefone);
-            pst.setString(4, fraq.endereco);
+            pst.setLong(1, fraq.getCnpj());
+            pst.setString(2, fraq.getNome());
+            pst.setLong(3, fraq.getTelefone());
+            pst.setString(4, fraq.getEndereco());
             
             pst.execute();
             sucesso = true;
@@ -51,10 +51,10 @@ public class casdastroDAO extends ConnectionDAO{
         String sql = "INSERT INTO Bicicleta (cor, modelo, aro, alocada) values(?,?,?,?)";
         try {
             pst = con.prepareStatement(sql);
-            pst.setString(1, bike.cor);
-            pst.setString(2, bike.modelo);
-            pst.setInt(3, bike.aro);
-            pst.setBoolean(4, bike.locada);
+            pst.setString(1, bike.getCor());
+            pst.setString(2, bike.getModelo());
+            pst.setInt(3, bike.getAro());
+            pst.setBoolean(4, bike.isLocada());
             
             pst.execute();
             sucesso = true;
