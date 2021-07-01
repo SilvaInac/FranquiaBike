@@ -121,6 +121,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         });
 
         VOLTAR.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        VOLTAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/volta_30x30.png"))); // NOI18N
         VOLTAR.setText("VOLTA");
         VOLTAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

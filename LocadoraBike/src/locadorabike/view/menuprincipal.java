@@ -128,12 +128,22 @@ public class menuprincipal extends javax.swing.JFrame {
         criarfranq.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         criarfranq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/franquia_30x30.png"))); // NOI18N
         criarfranq.setText("FRAQUIAS");
+        criarfranq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                criarfranqActionPerformed(evt);
+            }
+        });
         jPanel1.add(criarfranq, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 140, 100));
 
         criarbikeasc.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         criarbikeasc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/locadorabike/view/imagens/bike_30x30.png"))); // NOI18N
         criarbikeasc.setText("BIKE");
         criarbikeasc.setToolTipText("");
+        criarbikeasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                criarbikeascActionPerformed(evt);
+            }
+        });
         jPanel1.add(criarbikeasc, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 140, 100));
 
         locar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -298,6 +308,20 @@ public class menuprincipal extends javax.swing.JFrame {
         lc.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_locarActionPerformed
+
+    private void criarfranqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarfranqActionPerformed
+        // TODO add your handling code here:
+        cadastroFranquia cf = new cadastroFranquia(atuuser);
+        cf.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_criarfranqActionPerformed
+
+    private void criarbikeascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarbikeascActionPerformed
+        // TODO add your handling code here:
+        cadastroBike cb = new cadastroBike(atuuser);
+        cb.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_criarbikeascActionPerformed
 
     /**
      * @param args the command line arguments

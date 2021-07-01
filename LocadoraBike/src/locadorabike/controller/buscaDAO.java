@@ -8,6 +8,7 @@ package locadorabike.controller;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import locadorabike.model.Bicicleta;
+import locadorabike.model.Franquia;
 import locadorabike.model.Usuario;
 
 /**
@@ -62,18 +63,17 @@ public class buscaDAO extends ConnectionDAO{
         
         connectToDB();
         
-        String sql = "SELECT * FROM Pessoa";
+        String sql = "SELECT * FROM Bicicleta";
         
         try {
             st = con.createStatement();
             rs = st.executeQuery(sql);
-            System.out.println("Lista de Pessoas: ");
             while (rs.next()) {
                 Bicicleta bikeAux = new Bicicleta();
-                bikeAux.id_bike = rs.getInt("id");
-                bikeAux.modelo = rs.getString("modelo");
-                bikeAux.id_bike = rs.getInt("aro");
-                bikeAux.locada = rs.getBoolean("alocada");
+                bikeAux.setId_bike(rs.getInt("id"));
+                bikeAux.setModelo(rs.getString("modelo"));
+                bikeAux.setAro(rs.getInt("aro"));
+                bikeAux.setLocada(rs.getBoolean("alocada"));
                 
                 listaDeBike.add(bikeAux);
             }
@@ -90,5 +90,39 @@ public class buscaDAO extends ConnectionDAO{
             }
         }
         return listaDeBike;
+    }
+    
+    public ArrayList<Franquia> buscarFranquiaSemFiltro() {
+        ArrayList<Franquia> listaDeFranq = new ArrayList<>();
+        
+        connectToDB();
+        
+        String sql = "SELECT * FROM Franquia";
+        
+        try {
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+            while (rs.next()) {
+                Franquia franAux = new Franquia();
+                franAux.setCnpj(rs.getLong("cnpj"));
+                franAux.setNome(rs.getString("nome"));
+                franAux.setTelefone(rs.getLong("telefone"));
+                franAux.setEndereco(rs.getString("endereco"));                
+                
+                listaDeFranq.add(franAux);
+            }
+            sucesso = true;
+        } catch(SQLException e) {
+            System.out.println("Erro: " + e.getMessage());
+            sucesso = false;
+        } finally {
+            try {
+                con.close();
+                st.close();
+            } catch(SQLException e) {
+                System.out.println("Erro: " + e.getMessage());
+            }
+        }
+        return listaDeFranq;
     }
 }

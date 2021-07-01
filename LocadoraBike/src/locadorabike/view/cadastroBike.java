@@ -10,6 +10,7 @@ import locadorabike.controller.casdastroDAO;
 import locadorabike.exception.NaoPreenchidoException;
 import locadorabike.exception.PreenchimentoInvalidoException;
 import locadorabike.model.Bicicleta;
+import locadorabike.model.Usuario;
 
 /**
  *
@@ -23,6 +24,17 @@ public class cadastroBike extends javax.swing.JFrame {
      */
     public cadastroBike() {
         initComponents();
+    }
+    
+    Usuario atualuser = new Usuario();
+    public cadastroBike(Usuario user) {
+        initComponents();
+        atualuser.setCpf(user.getCpf());
+        atualuser.setTelefone(user.getTelefone());
+        atualuser.setAdm(user.isAdm());
+        atualuser.setEndereco(user.getEndereco());
+        atualuser.setNome(user.getNome());
+        atualuser.setSenha(user.getSenha());
     }
 
     /**
@@ -53,7 +65,7 @@ public class cadastroBike extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Cadastro da Bicicleta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Cadastro da Bicicleta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
 
         LabelCor.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         LabelCor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -238,9 +250,8 @@ public class cadastroBike extends javax.swing.JFrame {
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         // TODO add your handling code here:
-        LoginUsuario login = new LoginUsuario();
-
-        login.setVisible(true);
+        menuprincipal menu = new menuprincipal(atualuser);
+        menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
