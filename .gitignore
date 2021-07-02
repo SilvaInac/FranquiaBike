@@ -1,3 +1,4 @@
-/LocadoraBike/nbproject/
-/LocadoraBike/build/
-/LocadoraBike/dist/
+/LocadoraBike/nbproject
+/LocadoraBike/build
+/LocadoraBike/dist
+ LocadoraBike/src/locadorabike/controller/ConnectionDAO.java
