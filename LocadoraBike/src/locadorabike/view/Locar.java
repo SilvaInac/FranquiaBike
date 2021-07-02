@@ -80,8 +80,6 @@ public class Locar extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         leg7 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jPanel3 = new javax.swing.JPanel();
         logout2 = new javax.swing.JLabel();
         leg4 = new javax.swing.JLabel();
@@ -240,12 +238,6 @@ public class Locar extends javax.swing.JFrame {
         leg7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         leg7.setText("ESCOLHA O ACESSÓRIO QUE VOCÊ DESEJA");
         jPanel2.add(leg7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 372, 30));
-
-        jDateChooser1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 90, 30));
-
-        jDateChooser2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 90, 30));
 
         jTabbedPane1.addTab("LOCAR", jPanel2);
 
@@ -443,8 +435,6 @@ public class Locar extends javax.swing.JFrame {
     private javax.swing.JComboBox<Object> escolha1;
     private javax.swing.JComboBox<Object> escolha2;
     private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
