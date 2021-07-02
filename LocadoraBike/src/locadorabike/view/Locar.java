@@ -5,6 +5,8 @@
  */
 package locadorabike.view;
 
+import locadorabike.controller.buscaDAO;
+import locadorabike.model.Franquia;
 import locadorabike.model.Usuario;
 
 /**
@@ -16,8 +18,14 @@ public class Locar extends javax.swing.JFrame {
     /**
      * Creates new form Locar
      */
+    buscaDAO buscas = new buscaDAO();
     public Locar() {
         initComponents();
+        for(Franquia fra: buscas.buscarFranquiaSemFiltro()){
+            escolha1.addItem(fra);
+            escolha2.addItem(fra);
+        }
+        sim.setSelected(true);
     }
     Usuario atualuser = new Usuario();
     public Locar(Usuario user) {
@@ -28,6 +36,11 @@ public class Locar extends javax.swing.JFrame {
         atualuser.setNome(user.getNome());
         atualuser.setSenha(user.getSenha());
         initComponents();
+        for(Franquia fra: buscas.buscarFranquiaSemFiltro()){
+            escolha1.addItem(fra);
+            escolha2.addItem(fra);
+        }
+        sim.setSelected(true);
     }
 
     /**
@@ -85,6 +98,11 @@ public class Locar extends javax.swing.JFrame {
         leg1.setText("SAIDA:");
         jPanel2.add(leg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 80, 30));
 
+        escolha1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                escolha1ItemStateChanged(evt);
+            }
+        });
         jPanel2.add(escolha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 100, 30));
 
         leg2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -164,6 +182,11 @@ public class Locar extends javax.swing.JFrame {
         buttonGroup1.add(sim);
         sim.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         sim.setText("SIM");
+        sim.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                simItemStateChanged(evt);
+            }
+        });
         jPanel2.add(sim, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
 
         buttonGroup1.add(nao);
@@ -249,6 +272,30 @@ public class Locar extends javax.swing.JFrame {
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_logout2MouseClicked
+
+    private void simItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_simItemStateChanged
+        // TODO add your handling code here:
+        if(sim.isSelected()){
+            jLabel5.setVisible(true);
+            jLabel6.setVisible(true);
+            jLabel8.setVisible(true);
+            acessorio.setVisible(true);
+            corcap.setVisible(true);
+            tamanhocap.setVisible(true);
+        }
+        else{
+            jLabel5.setVisible(false);
+            jLabel6.setVisible(false);
+            jLabel8.setVisible(false);
+            acessorio.setVisible(false);
+            corcap.setVisible(false);
+            tamanhocap.setVisible(false);
+        }
+    }//GEN-LAST:event_simItemStateChanged
+
+    private void escolha1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_escolha1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_escolha1ItemStateChanged
 
     /**
      * @param args the command line arguments

@@ -25,7 +25,7 @@ public abstract class ConnectionDAO {
     String database = "bike";
     String url = "jdbc:mysql://127.0.0.1:3306/" + database + "?useTimezone=true&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true";
     String user = "root";
-    String password = "Du190401";
+    String password = "m17r05";
     
     public void connectToDB() {
         try {
