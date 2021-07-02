@@ -7,6 +7,7 @@ package locadorabike.controller;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import locadorabike.model.Acessorio;
 import locadorabike.model.Bicicleta;
 import locadorabike.model.Franquia;
 import locadorabike.model.Usuario;
@@ -125,4 +126,83 @@ public class buscaDAO extends ConnectionDAO{
         }
         return listaDeFranq;
     }
+    
+    public ArrayList<Bicicleta> buscarBikePorFranquia(long cnpj) {
+    
+        ArrayList<Bicicleta> listaDeBike = new ArrayList<>();
+        connectToDB();
+        
+        String sql = "SELECT bike.id, bike.cor, bike.modelo, bike.aro, bike.alocada "
+                + "FROM Bicicleta as bike, estoque as es"
+                + " WHERE bike.id = es.idBike and es.cnpjFranquia = ?";
+        
+        try {
+            pst = con.prepareStatement(sql);
+            pst.setLong(1, cnpj);
+            rs = pst.executeQuery();
+            st = con.createStatement();
+            while (rs.next()) {
+                Bicicleta bikeAux = new Bicicleta();
+                bikeAux.setId_bike(rs.getInt("id"));
+                bikeAux.setModelo(rs.getString("modelo"));
+                bikeAux.setAro(rs.getInt("aro"));
+                bikeAux.setCor(rs.getString("cor"));
+                bikeAux.setLocada(rs.getBoolean("alocada"));
+                
+                listaDeBike.add(bikeAux);
+            }
+            sucesso = true;
+        } catch(SQLException e) {
+            System.out.println("Erro: " + e.getMessage());
+            sucesso = false;
+        } finally {
+            try {
+                con.close();
+                st.close();
+            } catch(SQLException e) {
+                System.out.println("Erro: " + e.getMessage());
+            }
+        }
+        return listaDeBike;
+    }
+/*
+    public ArrayList<Acessorio> buscarAcessorioPorFranquia(long cnpj) {
+    
+        ArrayList<Acessorio> listaDeAcessorio = new ArrayList<>();
+        connectToDB();
+        
+        String sql = "SELECT ac.id, ac.corCapacete, ac.tamanhoCapacete, ac.protecao "
+                + "FROM Acessorio as ac, estoque as es"
+                + " WHERE ac.id = es.idBike and es.cnpjFranquia = ?";
+        
+        try {
+            pst = con.prepareStatement(sql);
+            pst.setLong(1, cnpj);
+            rs = pst.executeQuery();
+            st = con.createStatement();
+            while (rs.next()) {
+                Acessorio AcessorioAux = new Acessorio();
+                AcessorioAux.id_acessorio(rs.getInt("id"));
+                AcessorioAux.setModelo(rs.getString("modelo"));
+                AcessorioAux.setAro(rs.getInt("aro"));
+                AcessorioAux.setCor(rs.getString("cor"));
+                AcessorioAux.setLocada(rs.getBoolean("alocada"));
+                
+                listaDeAcessorio.add(AcessorioAux);
+            }
+            sucesso = true;
+        } catch(SQLException e) {
+            System.out.println("Erro: " + e.getMessage());
+            sucesso = false;
+        } finally {
+            try {
+                con.close();
+                st.close();
+            } catch(SQLException e) {
+                System.out.println("Erro: " + e.getMessage());
+            }
+        }
+        return listaDeAcessorio;
+    }
+    */
 }

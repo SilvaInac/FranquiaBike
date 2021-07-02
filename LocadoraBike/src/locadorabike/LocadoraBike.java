@@ -9,6 +9,8 @@ package locadorabike;
  *
  * @author Cap
  */
+import locadorabike.controller.buscaDAO;
+import locadorabike.model.Bicicleta;
 import locadorabike.view.LoginUsuario;
 
 public class LocadoraBike {
@@ -18,23 +20,7 @@ public class LocadoraBike {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        /*Franquia fran1 = new Franquia();
-        fran1.cnpj = 123456;
-        fran1.nome = "Anchieta";
-        fran1.endereco = "Rua alfredo";
-        fran1.telefone = 994561257;
-        
-        Bicicleta bike = new Bicicleta();
-        
-        casdastroDAO cDAO = new casdastroDAO();
-        if(cDAO.inserirFranquia(fran1)){
-            System.out.println("Franquia inserida");
-        }
-        else{
-            System.out.println("Não conseguimos inserir");
-        }*/
-        
+              
         LoginUsuario login = new LoginUsuario();        
             login.setVisible(true);        
         
