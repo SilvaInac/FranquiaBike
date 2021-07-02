@@ -57,5 +57,10 @@ public class Bicicleta {
         this.locada = locada;
     }
 
+    @Override
+    public String toString() {
+        return "Bike " + Integer.toString(getId_bike());
+    }
+    
     
 }
