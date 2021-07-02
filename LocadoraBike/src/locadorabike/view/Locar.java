@@ -119,6 +119,16 @@ public class Locar extends javax.swing.JFrame {
                 escolha1ItemStateChanged(evt);
             }
         });
+        escolha1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                escolha1PopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+                escolha1PopupMenuWillBecomeVisible(evt);
+            }
+        });
         jPanel2.add(escolha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 280, 30));
 
         leg2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -126,6 +136,15 @@ public class Locar extends javax.swing.JFrame {
         leg2.setText("DESTINO:");
         jPanel2.add(leg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 80, 30));
 
+        escolha2.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                escolha2PopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
         jPanel2.add(escolha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 280, 30));
 
         leg3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -136,6 +155,15 @@ public class Locar extends javax.swing.JFrame {
         bike.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 bikeItemStateChanged(evt);
+            }
+        });
+        bike.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                bikePopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
         });
         jPanel2.add(bike, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 100, 30));
@@ -368,21 +396,52 @@ public class Locar extends javax.swing.JFrame {
 
     private void escolha1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_escolha1ItemStateChanged
         // TODO add your handling code here:
-        Franquia frq = (Franquia) escolha1.getSelectedItem();
-        for(Bicicleta bici: buscas.buscarBikePorFranquia(frq.getCnpj())){
-            bike.addItem(bici);
-            System.out.println(bici.getCor());
-        }
+        
     }//GEN-LAST:event_escolha1ItemStateChanged
 
     private void bikeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_bikeItemStateChanged
         // TODO add your handling code here:
-        Bicicleta bici = (Bicicleta) bike.getSelectedItem();
-        modelo.setText(bici.getModelo());
-        System.out.println(bici.getCor());
-        cor.setText(bici.getCor());
-        aro.setText(Integer.toString(bici.getAro()));
+        //função aberta errada
     }//GEN-LAST:event_bikeItemStateChanged
+
+    private void escolha2PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_escolha2PopupMenuWillBecomeInvisible
+        // TODO add your handling code here:
+        //função aberta errada
+    }//GEN-LAST:event_escolha2PopupMenuWillBecomeInvisible
+
+    private void escolha1PopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_escolha1PopupMenuWillBecomeVisible
+        // TODO add your handling code here:
+        bike.removeAllItems();
+    }//GEN-LAST:event_escolha1PopupMenuWillBecomeVisible
+
+    private void escolha1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_escolha1PopupMenuWillBecomeInvisible
+        // TODO add your handling code here:
+        Franquia frq = (Franquia) escolha1.getSelectedItem();
+        Bicicleta biciaux = new Bicicleta();
+        if(buscas.buscarBikePorFranquia(frq.getCnpj()) != null){
+            for(Bicicleta bici: buscas.buscarBikePorFranquia(frq.getCnpj())){
+                bike.addItem(bici);
+                System.out.println(bici.getCor());
+            }
+        }
+    }//GEN-LAST:event_escolha1PopupMenuWillBecomeInvisible
+
+    private void bikePopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_bikePopupMenuWillBecomeInvisible
+        // TODO add your handling code here:
+        Bicicleta bici = (Bicicleta) bike.getSelectedItem();
+        if(bici == null){
+            modelo.setText("");
+            System.out.println("");
+            cor.setText("");
+            aro.setText("");
+        }
+        else{
+            modelo.setText(bici.getModelo());
+            System.out.println(bici.getCor());
+            cor.setText(bici.getCor());
+            aro.setText(Integer.toString(bici.getAro()));
+        }
+    }//GEN-LAST:event_bikePopupMenuWillBecomeInvisible
 
     /**
      * @param args the command line arguments
